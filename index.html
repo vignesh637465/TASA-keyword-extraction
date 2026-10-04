@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Extraction System | Text & Speech Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-icon">🔑🏷️</div>
+            <h1>Keyword Extraction System</h1>
+            <p class="subtitle">Extract, rank, and visualize key terms using Frequency Analysis & Stop-Word Filtering</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <!-- Sample Article Button -->
+            <section class="preset-section">
+                <span class="preset-label">Try sample article:</span>
+                <div class="preset-buttons">
+                    <button type="button" id="sampleBtn" class="btn-preset">📰 Load Machine Learning Article</button>
+                </div>
+            </section>
+
+            <!-- Input Area -->
+            <section class="input-section">
+                <div class="label-row">
+                    <label for="textInput" class="input-label">Enter Text or Article:</label>
+                    <div class="stats-counter"><span id="charCount">0</span> Chars | <span id="wordCount">0</span> Words</div>
+                </div>
+                <textarea id="textInput" placeholder="Paste your article or document here..." rows="7"></textarea>
+
+                <div class="action-buttons">
+                    <button id="extractBtn" class="btn btn-primary">
+                        <span class="btn-icon">⚡</span> Extract Keywords
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span> Clear
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="divider"></div>
+                <h2>Extracted Keyword Analysis</h2>
+
+                <!-- Top 5 & Top 10 Columns -->
+                <div class="top-ranks-grid">
+                    <div class="rank-card">
+                        <h3>🏆 Top 5 Keywords</h3>
+                        <ol id="top5List" class="rank-list"></ol>
+                    </div>
+                    <div class="rank-card">
+                        <h3>⭐ Top 10 Keywords</h3>
+                        <ol id="top10List" class="rank-list"></ol>
+                    </div>
+                </div>
+
+                <!-- Word Cloud Section -->
+                <div class="cloud-section">
+                    <h3>☁️ Dynamic Word Cloud</h3>
+                    <div id="wordCloud" class="cloud-container"></div>
+                </div>
+
+                <!-- Frequency Table -->
+                <div class="table-section">
+                    <h3>📊 Ranked Frequency Table</h3>
+                    <div class="table-wrapper">
+                        <table class="freq-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Keyword</th>
+                                    <th>Frequency</th>
+                                    <th>Importance Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Text & Speech Analysis Project #8 &bull; Stop-Word Filtered Frequency Extraction</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
